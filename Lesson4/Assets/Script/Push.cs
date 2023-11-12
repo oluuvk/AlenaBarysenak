@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Push : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rigidbody, _rigidbodyEnemy;
+    [SerializeField] private Rigidbody _rigidbody;
+    private Rigidbody _rigidbodyEnemy;
     [SerializeField] private Mass _mass;
     void Update()
     {
@@ -25,7 +26,7 @@ public class Push : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        _rigidbodyEnemy = collision.gameObject.GetComponent<Rigidbody>();
+        _rigidbodyEnemy=collision.gameObject.GetComponent<Rigidbody>();
         if (collision.gameObject.GetComponent<Mass>())
         {
             if (gameObject.GetComponent<Mass>().Amount > collision.gameObject.GetComponent<Mass>().Amount)
