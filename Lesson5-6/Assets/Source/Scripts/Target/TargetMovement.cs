@@ -1,14 +1,21 @@
 using UnityEngine;
 public class TargetMovement : MonoBehaviour
 {
-    [SerializeField] private Transform _spawnPoint;
+    private Vector3 _spawnPoint;
     [SerializeField] private Transform _target;
-    private int _force;
     private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        for (int i = 0; i < 3; i++)
         {
-            Instantiate(_target, _spawnPoint.position, Quaternion.identity);
+        RandomPosition();
+        Instantiate(_target, _spawnPoint, Quaternion.identity);
         }
+    }
+    private void RandomPosition()
+    {
+        float x = Random.Range(0, 10);
+        float y = Random.Range(0, 10);
+        float z = Random.Range(0, 10);
+        _spawnPoint = new Vector3(x, y, z);
     }
 }
