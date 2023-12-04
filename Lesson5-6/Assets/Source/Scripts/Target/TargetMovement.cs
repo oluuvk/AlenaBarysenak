@@ -2,13 +2,15 @@ using UnityEngine;
 public class TargetMovement : MonoBehaviour
 {
     private Vector3 _spawnPoint;
-    [SerializeField] private Transform _target;
+    [SerializeField] private Target _target;
+    [SerializeField] private CounterUI _counter;
     private void Start()
     {
         for (int i = 0; i < 3; i++)
         {
-        RandomPosition();
-        Instantiate(_target, _spawnPoint, Quaternion.identity);
+            RandomPosition();
+            Target targetCreated = Instantiate(_target, _spawnPoint, Quaternion.identity).GetComponent<Target>();
+            targetCreated.SetCounter(_counter);
         }
     }
     private void RandomPosition()

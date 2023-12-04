@@ -3,14 +3,17 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _textMeshPro;
     private int _count;
+    private CounterUI _counter;
+    public void SetCounter(CounterUI counter)
+    {
+        _counter = counter;
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<Ball>())
         {
-            _count++;
-            _textMeshPro.text = "Ты попал " + _count.ToString() + " раз";
+            _counter.AddCount();
             Destroy(collision.gameObject);
         }
     }
