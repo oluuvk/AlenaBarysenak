@@ -12,9 +12,7 @@ public class CannonSimply : Cannon
     {
         if (Ammo == 0)
             return;
-        Ball BallCreated = Instantiate(_ball, _spawnPoint.position, Quaternion.identity).GetComponent<Ball>();
-        BallCreated.Fly(_spawnPoint.transform.forward, 50);
-        Ammo--;
+        CreatedBall();
     }
     private IEnumerator DoubleShootTick()
     {
