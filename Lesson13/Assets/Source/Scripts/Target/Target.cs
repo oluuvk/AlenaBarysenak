@@ -1,16 +1,12 @@
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
-public class Target : MonoBehaviour
+public class Target : MonoBehaviour, IHitable
 {
-    public virtual void OnCollisionEnter(Collision collision)
+    public void Hit(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Bird>())
-        {
-            Destroy(collision.gameObject);
-        }
+        Destroy(gameObject);
     }
 }
 

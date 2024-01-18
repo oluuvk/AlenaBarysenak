@@ -24,6 +24,7 @@ public class Bird : MonoBehaviour
         {
             transform.position = _shootPoint.position;
         }
+        //AddForce();
     }
     public void SetUp(Transform shootPoint, Transform startPoint)
     {
@@ -39,8 +40,5 @@ public class Bird : MonoBehaviour
         _rigidbody.isKinematic = false;
         _rigidbody.AddForce(direction, ForceMode2D.Impulse);
     }
-    public void GetAcceleration()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, _target.position, a * Time.deltaTime);
-    }
+    
 }

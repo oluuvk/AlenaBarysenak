@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3446523751647590741}
   - component: {fileID: 3446523751647590740}
   - component: {fileID: 3446523751647590739}
+  - component: {fileID: -8159077396856095989}
+  - component: {fileID: -4184623674738980915}
   m_Layer: 0
   m_Name: borb
   m_TagString: Untagged
@@ -137,3 +139,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shootPoint: {fileID: 0}
+  _target: {fileID: 0}
+  a: 200
+--- !u!114 &-8159077396856095989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3446523751647590738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c4c72b0755c3246904425db9259147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4184623674738980915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3446523751647590738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ddd03bdc0557c47ba193c8a65c207b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

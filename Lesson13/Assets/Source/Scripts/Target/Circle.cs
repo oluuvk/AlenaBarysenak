@@ -1,17 +1,12 @@
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 
-public class Circle : Target
+public class Circle : MonoBehaviour, IHitable
 {
-    public override void OnCollisionEnter(Collision collision)
+    public void Hit()
     {
-        if (collision.gameObject.GetComponent<Bird>())
-        {
-            transform.localScale = new Vector3(4, 4, 0.5f);
-        }
+        transform.localScale = new Vector3(4, 4, 0.5f);
     }
-
 }
