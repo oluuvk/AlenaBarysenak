@@ -4,9 +4,13 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Target : MonoBehaviour, IHitable
 {
-    public void Hit(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        Destroy(collision.gameObject);
+    }
+    public void Hit(Collision2D collision)
+    {
+        OnCollisionEnter2D(collision);
     }
 }
 

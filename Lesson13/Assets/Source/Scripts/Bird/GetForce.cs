@@ -8,6 +8,9 @@ public class GetForce : MonoBehaviour
     {
         _bird = gameObject.GetComponent<Bird>();
         _rb = _bird.GetComponent<Rigidbody2D>();
+    }
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _rb.AddForce(_rb.velocity * 3, ForceMode2D.Impulse);
